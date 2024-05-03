@@ -7,13 +7,15 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { PROFILE_ICON } from "../utils/constants";
+import Netflixbg from "../images/netflixBG.jpg";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const name = useRef(null);
@@ -38,7 +40,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/Patil-Umesh",
+            photoURL: PROFILE_ICON,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -50,7 +52,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
 
             .catch((error) => {
@@ -71,8 +72,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -96,7 +95,7 @@ const Login = () => {
       <div>
         <img
           alt="Netflix-BG-Logo"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/058eee37-6c24-403a-95bd-7d85d3260ae1/e10ba8a6-b96a-4308-bee4-76fab1ebd6ca/IN-en-20240422-POP_SIGNUP_TWO_WEEKS-perspective_WEB_db9348f2-4d68-4934-b495-6d9d1be5917e_large.jpg"
+          src={Netflixbg}
           className="absolute brightness-50"
         />
       </div>
