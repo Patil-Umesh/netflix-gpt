@@ -44,7 +44,7 @@ const Header = () => {
   };
   return (
     <>
-      <div className="absolute w-full bg-black pl-28 mb-2 z-50 opacity-80 flex justify-between">
+      <div className="absolute w-full bg-black pl-28 mb-2 z-50 opacity-80 hover:opacity-95 flex justify-between">
         <img className="w-48" alt="Netflix-Logo" src={LOGO_URL} />
         {user && (
           <div className="flex justify-between content-center items-center pr-3">

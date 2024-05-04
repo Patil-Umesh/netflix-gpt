@@ -2,22 +2,20 @@ import React from "react";
 import Header from "./Header";
 import useGetMovies from "../hooks/useGetMovies";
 import MainContainer from "./MainContainer";
-// import SecondaryContainer from "./SecondaryContainer";
+import SecondaryContainer from "./SecondaryContainer";
+import useGetPopularMovies from "../hooks/useGetPopularMovies";
+import useGetTopRatedMovies from "../hooks/useGetTopRatedMovies";
 
 const Browse = () => {
   useGetMovies();
+  useGetPopularMovies();
+  useGetTopRatedMovies();
   return (
     <div>
       <Header />
-      {/* Main Container
-            - Video Background
-            - Video Title
-          Secondary Container
-            - MovieList*n
-            - Cards*n
-      */}
+
       <MainContainer />
-      {/* <SecondaryContainer /> */}
+      <SecondaryContainer />
     </div>
   );
 };
