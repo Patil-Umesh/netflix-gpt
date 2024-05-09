@@ -13,8 +13,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5OGM4M2U0YjM2YmUwNDcyNGJiZjNiMDM3YjExNmRhZCIsInN1YiI6IjY2MzFkNmUwODNlZTY3MDEyYTNmZWE1MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.S34Cc0GkztRvcYv6kNsmBXd9PIqb3y6SvuJ1jOD2VMw",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_API_KEY,
   },
 };
 export const SUPPORTED_LANG = [

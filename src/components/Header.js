@@ -59,7 +59,11 @@ const Header = () => {
   return (
     <>
       <div className="absolute w-full bg-black pl-28 mb-2 z-50 flex justify-between">
-        <img className="w-48" alt="Netflix-Logo" src={LOGO_URL} />
+        <img
+          className="w-48 cursor-pointer"
+          alt="Netflix-Logo"
+          src={LOGO_URL}
+        />
         {user && (
           <div className="flex justify-between content-center items-center pr-3">
             {searchView && (
@@ -82,7 +86,7 @@ const Header = () => {
             </button>
             <img
               alt="Profile-Img"
-              className="h-10 w-10 mx-2 rounded-md"
+              className="h-10 w-10 mx-2 rounded-md cursor-pointer"
               src={user?.photoURL}
             />
             <button
