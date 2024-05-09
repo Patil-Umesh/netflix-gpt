@@ -1,15 +1,22 @@
 import React from "react";
 import { POSTER_CDN } from "../utils/constants";
 
-const MovieCard = ({ poster }) => {
+const MovieCard = ({ poster, movie }) => {
+  const getMovieTrailer = () => {
+    console.log(movie);
+  };
+
   return (
-    <div className="w-48 h-[18rem] mx-2">
-      <img
-        className="w-48 h-[18rem] rounded-lg"
-        alt="Movie Cards"
-        src={POSTER_CDN + poster}
-      />
-    </div>
+    poster && (
+      <div className="w-48 pr-4">
+        <img
+          onClick={getMovieTrailer}
+          className="rounded-lg cursor-pointer h-[280px]"
+          alt="Movie Cards"
+          src={POSTER_CDN + poster}
+        />
+      </div>
+    )
   );
 };
 

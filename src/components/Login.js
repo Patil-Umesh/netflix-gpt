@@ -12,6 +12,8 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { PROFILE_ICON } from "../utils/constants";
 import Netflixbg from "../images/netflixBG.jpg";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -83,6 +85,8 @@ const Login = () => {
           );
         });
     }
+    const notify = () => toast("Signed In Successfully !");
+    notify();
   };
 
   const toggleSignIn = () => {
@@ -134,6 +138,7 @@ const Login = () => {
         >
           {isSignIn ? "Sign In" : "Sign Up"}
         </button>
+        <ToastContainer position="bottom-right" />
         <div className="flex justify-between my-2">
           <div className="cursor-pointer">Need Help?</div>
           <div className="cursor-pointer hover:underline">Forgot Password?</div>

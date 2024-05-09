@@ -4,7 +4,7 @@ import { MORE_INFO, PLAY_BTN } from "../utils/constants";
 const VideoTitle = ({ title, description }) => {
   return (
     <div className="absolute bg-gradient-to-r from-black">
-      <div className="w-[400px] h-[750px] pt-[150px] pl-12">
+      <div className="w-[400px] h-[750px] pt-[200px] pl-12">
         <div className="font-bold text-white text-5xl">{title} </div>
         <div className="mt-4 text-white text-lg">{description} </div>
         <div className="flex my-5">
